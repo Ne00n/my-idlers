@@ -1,4 +1,4 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.3-fpm-alpine
 
 RUN apk add --no-cache linux-headers
 RUN docker-php-ext-install pdo pdo_mysql sockets
