@@ -20,6 +20,8 @@ class OsSeeder extends Seeder
             ["name" => "Centos", "created_at" => Carbon::now()],
             ["name" => "Debian 9", "created_at" => Carbon::now()],
             ["name" => "Debian 10", "created_at" => Carbon::now()],
+            ["name" => "Debian 11", "created_at" => Carbon::now()],
+            ["name" => "Debian 12", "created_at" => Carbon::now()],
             ["name" => "Debian", "created_at" => Carbon::now()],
             ["name" => "Fedora 32", "created_at" => Carbon::now()],
             ["name" => "Fedora 33", "created_at" => Carbon::now()],
