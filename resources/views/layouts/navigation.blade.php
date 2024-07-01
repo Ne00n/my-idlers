@@ -1,4 +1,8 @@
+@if(Session::get('dark_mode'))
+<nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm" aria-label="Eleventh navbar example">
+@else
 <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm" aria-label="Eleventh navbar example">
+@endif
     <div class="container">
         <a class="navbar-brand" href="{{route('/')}}">@if (config()->has('app.name')) {{ config('app.name') }} @else My idlers @endif</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09"
