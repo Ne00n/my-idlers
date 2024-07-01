@@ -28,7 +28,17 @@ class LabelsSeeder extends Seeder
             ],
             [
                 "id" => Str::random(8),
+                "label" => "Nginx",
+                "created_at" => date('Y-m-d H:i:s')
+            ],
+            [
+                "id" => Str::random(8),
                 "label" => "MySQL",
+                "created_at" => date('Y-m-d H:i:s')
+            ],
+            [
+                "id" => Str::random(8),
+                "label" => "MariaDB",
                 "created_at" => date('Y-m-d H:i:s')
             ],
             [
@@ -43,7 +53,17 @@ class LabelsSeeder extends Seeder
             ],
             [
                 "id" => Str::random(8),
-                "label" => "PHP 8",
+                "label" => "Bouncer",
+                "created_at" => date('Y-m-d H:i:s')
+            ],
+            [
+                "id" => Str::random(8),
+                "label" => "Proxy",
+                "created_at" => date('Y-m-d H:i:s')
+            ],
+            [
+                "id" => Str::random(8),
+                "label" => "VPN",
                 "created_at" => date('Y-m-d H:i:s')
             ],
             [
@@ -53,7 +73,22 @@ class LabelsSeeder extends Seeder
             ],
             [
                 "id" => Str::random(8),
+                "label" => "PHP 8.0",
+                "created_at" => date('Y-m-d H:i:s')
+            ],
+            [
+                "id" => Str::random(8),
                 "label" => "PHP 8.1",
+                "created_at" => date('Y-m-d H:i:s')
+            ],
+            [
+                "id" => Str::random(8),
+                "label" => "PHP 8.2",
+                "created_at" => date('Y-m-d H:i:s')
+            ],
+            [
+                "id" => Str::random(8),
+                "label" => "PHP 8.3",
                 "created_at" => date('Y-m-d H:i:s')
             ],
             [
