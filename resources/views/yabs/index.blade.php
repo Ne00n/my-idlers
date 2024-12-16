@@ -19,6 +19,8 @@
                         <th>Disk</th>
                         <th>GB5 S</th>
                         <th>GB5 M</th>
+                        <th>GB6 S</th>
+                        <th>GB6 M</th>
                         <th>IPv6</th>
                         <th>4k</th>
                         <th>64k</th>
@@ -35,13 +37,17 @@
                                 <td><a href="servers/{{$yab->server_id}}"
                                        class="text-decoration-none">{{ $yab->server->hostname }}</a></td>
                                 <td><span title="{{$yab->cpu_model}}">{{ $yab->cpu_cores }}</span></td>
-                                <td><span title="{{$yab->cpu_model}}">{{ $yab->cpu_freq }}<small>Mhz</small></span></td>
-                                <td>{{ $yab->ram }}<small>{{ $yab->ram_type }}</small></td>
-                                <td>{{ $yab->disk }}<small>{{ $yab->disk_type }}</small></td>
+                                <td><span title="{{$yab->cpu_model}}">{{ bcdiv($yab->cpu_freq, 1, 2); }}<small>Mhz</small></span></td>
+                                <td>{{ bcdiv($yab->ram, 1, 2); }}<small>{{ $yab->ram_type }}</small></td>
+                                <td>{{ bcdiv($yab->disk, 1, 2); }}<small>{{ $yab->disk_type }}</small></td>
                                 <td><a href="https://browser.geekbench.com/v5/cpu/{{$yab->gb5_id}}"
                                        class="text-decoration-none">{{ $yab->gb5_single }}</a></td>
                                 <td><a href="https://browser.geekbench.com/v5/cpu/{{$yab->gb5_id}}"
                                        class="text-decoration-none">{{ $yab->gb5_multi }}</a></td>
+                                <td><a href="https://browser.geekbench.com/v6/cpu/{{$yab->gb6_id}}"
+                                       class="text-decoration-none">{{ $yab->gb6_single }}</a></td>
+                                <td><a href="https://browser.geekbench.com/v6/cpu/{{$yab->gb6_id}}"
+                                       class="text-decoration-none">{{ $yab->gb6_multi }}</a></td>
                                 <td>@if($yab->has_ipv6 === 1)
                                         Yes
                                     @else

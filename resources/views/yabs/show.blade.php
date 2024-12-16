@@ -27,7 +27,7 @@
                                 </tr>
                                 <tr>
                                     <td class="px-4 py-2 font-bold">CPU</td>
-                                    <td>{{ $yabs->cpu_cores }} @ {{$yabs->cpu_freq}} Mhz</td>
+                                    <td>{{ $yabs->cpu_cores }} @ {{ bcdiv($yabs->cpu_freq, 1, 2); }} Mhz</td>
                                 </tr>
                                 <tr>
                                     <td class="px-4 py-2 font-bold">CPU type</td>
@@ -35,15 +35,15 @@
                                 </tr>
                                 <tr>
                                     <td class="px-4 py-2 font-bold">RAM</td>
-                                    <td>{{ $yabs->ram }} {{$yabs->ram_type}}</td>
+                                    <td>{{ bcdiv($yabs->ram, 1, 2); }} {{$yabs->ram_type}}</td>
                                 </tr>
                                 <tr>
                                     <td class="px-4 py-2 font-bold">Swap</td>
-                                    <td>{{ $yabs->swap }} {{$yabs->swap_type}}</td>
+                                    <td>{{ bcdiv($yabs->swap, 1, 2); }} {{$yabs->swap_type}}</td>
                                 </tr>
                                 <tr>
                                     <td class="px-4 py-2 font-bold">Disk</td>
-                                    <td>{{ $yabs->disk }} {{$yabs->disk_type}}</td>
+                                    <td>{{ bcdiv($yabs->disk, 1, 2); }} {{$yabs->disk_type}}</td>
                                 </tr>
                                 <tr>
                                     <td class="px-4 py-2 font-bold">Has IPv6</td>
@@ -86,6 +86,16 @@
                                            class="text-decoration-none">{{ $yabs->gb5_multi }}</a></td>
                                 </tr>
                                 <tr>
+                                    <td class="px-4 py-2 font-bold">GB6 Single</td>
+                                    <td><a href="https://browser.geekbench.com/v6/cpu/{{$yabs->gb6_id}}"
+                                           class="text-decoration-none">{{ $yabs->gb6_single }}</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 font-bold">GB6 Multi</td>
+                                    <td><a href="https://browser.geekbench.com/v6/cpu/{{$yabs->gb6_id}}"
+                                           class="text-decoration-none">{{ $yabs->gb6_multi }}</a></td>
+                                </tr>
+                                <tr>
                                     <td class="px-4 py-2 font-bold">Test ran</td>
                                     <td>
                                         @if(!is_null($yabs->output_date))
@@ -104,19 +114,19 @@
                                 <td class="py-2">Disk speeds:</td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2"><b>4k</b> {{$yabs->disk_speed->d_4k}}
+                                <td class="px-4 py-2"><b>4k</b> {{ bcdiv($yabs->disk_speed->d_4k, 1, 2); }}
                                     <small>{{$yabs->disk_speed->d_4k_type}}</small></td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2"><b>64k</b> {{$yabs->disk_speed->d_64k}}
+                                <td class="px-4 py-2"><b>64k</b> {{ bcdiv($yabs->disk_speed->d_64k, 1, 2); }}
                                     <small>{{$yabs->disk_speed->d_64k_type}}</small></td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2"><b>512k</b> {{$yabs->disk_speed->d_512k}}
-                                    <small>{{$yabs->d_512k_type}}</small></td>
+                                <td class="px-4 py-2"><b>512k</b> {{ bcdiv($yabs->disk_speed->d_512k, 1, 2); }}
+                                    <small>{{ $yabs->disk_speed->d_512k_type }}</small></td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2"><b>1m</b> {{$yabs->disk_speed->d_1m}} <small>{{$yabs->disk_speed->d_1m_type}}</small>
+                                <td class="px-4 py-2"><b>1m</b> {{ bcdiv($yabs->disk_speed->d_1m, 1, 2); }} <small>{{$yabs->disk_speed->d_1m_type}}</small>
                                 </td>
                             </tr>
                             <tr>

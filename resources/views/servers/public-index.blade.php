@@ -76,6 +76,15 @@
                                 <td class="text-nowrap"> {{ $s->owned_since }}</td>
                                 <td class="text-nowrap">
                                     @if(Session::get('show_server_value_yabs') === 1)
+                                        {{$s->yabs[0]->gb5_single ?? null}}
+                                    @endif
+                                </td>
+                                <td class="text-nowrap">
+                                    @if(Session::get('show_server_value_yabs') === 1)
+                                        {{$s->yabs[0]->gb5_multi ?? null}}
+                                    @endif
+                                </td>
+                                    @if(Session::get('show_server_value_yabs') === 1)
                                         {{$s->yabs[0]->gb6_single ?? null}}
                                     @endif
                                 </td>

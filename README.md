@@ -7,7 +7,7 @@ Despite what the name infers this self-hosted web app isn't just for storing idl
 a [YABS](https://github.com/masonr/yet-another-bench-script) output you can get disk & network speed values along with
 GeekBench 5 & 6 scores to do easier comparing and sorting. Of course storing other services e.g. web hosting is possible and supported too with My idlers.
 
-[![Generic badge](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Laravel-11.0-red.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/PHP-8.2-purple.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Bootstrap-5.3-pink.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/version-3.0.1-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Laravel-11.34.2-red.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/PHP-8.3-purple.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Bootstrap-5.3-pink.svg)](https://shields.io/)
 
 <img src="https://raw.githubusercontent.com/cp6/my-idlers/main/public/My%20Idlers%20logo.jpg" width="128" height="128" />
 
@@ -68,7 +68,7 @@ php artisan cache:clear
 
 ## Install
 
-* Run `git clone https://github.com/cp6/my-idlers.git` into your directory of choice
+* Run `git clone https://github.com/Cryptominer937/my-idlers.git` into your directory of choice
 * Run `composer install`
 * Run `cp .env.example .env`
 * Edit (If needed) MySQL details in .env

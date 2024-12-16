@@ -58,3 +58,5 @@ fabric.properties
 # *.ipr
 storage/clockwork/
 !public/
+composer.phar
+public/.user.ini

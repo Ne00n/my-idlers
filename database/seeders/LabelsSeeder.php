@@ -33,6 +33,11 @@ class LabelsSeeder extends Seeder
             ],
             [
                 "id" => Str::random(8),
+                "label" => "XEN",
+                "created_at" => date('Y-m-d H:i:s')
+            ],
+            [
+                "id" => Str::random(8),
                 "label" => "Incus",
                 "created_at" => date('Y-m-d H:i:s')
             ],

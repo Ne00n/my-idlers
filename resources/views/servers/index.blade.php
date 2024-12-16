@@ -25,7 +25,7 @@
                     <a href="{{ route('servers-compare-choose') }}" class="btn btn-primary mb-3 ms-2">Compare
                         servers</a>
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered"  id="servers-table">
                             <thead class="table-light">
                             <tr class="bg-gray-100">
                                 <th>Name</th>
@@ -68,7 +68,7 @@
                                         <td class="text-nowrap">{{ $server->provider->name }}</td>
                                         <td class="text-nowrap">{{ $server->price->price }} {{$server->price->currency}} {{\App\Process::paymentTermIntToString($server->price->term)}}</td>
                                         <td class="text-nowrap">
-                                            {{floor(now()->diffInDays(Carbon\Carbon::parse($server->price->next_due_date), false))}}
+                                            {{number_format(now()->diffInDays(Carbon\Carbon::parse($server->price->next_due_date), false), 0)}}
                                             <small>days</small></td>
                                         <td class="text-nowrap"> {{ $server->owned_since }}</td>
                                         <td class="text-nowrap">
@@ -107,13 +107,13 @@
                     <a href="{{ route('servers-compare-choose') }}" class="btn btn-primary mb-3 ms-2">Compare
                         servers</a>
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered"  id="servers-table">
                             <thead class="table-light">
                             <tr class="bg-gray-100">
                                 <th>Name</th>
                                 <th class="text-center"><i class="fas fa-box" title="Virt"></i></th>
                                 <th class="text-center">OS</th>
-                                <th class="text-center"><i class="fas fa-microchip" title="CPU"></i></th>
+                                <th class="text-center"  onclick="sortTable(1)"><i class="fas fa-microchip" title="CPU"></i></th>
                                 <th class="text-center"><i class="fas fa-memory" title="ram"></i></th>
                                 <th class="text-center"><i class="fas fa-compact-disc" title="disk"></i></th>
                                 <th>Location</th>
@@ -142,7 +142,7 @@
                                         </td>
                                         <td class="text-center">
                                             @if($server->disk > 1000)
-                                                {{ number_format(($server->disk / 1024),1) }}<small>TB</small>
+                                                {{ number_format(($server->disk / 1024),5) }}<small>TB</small>
                                             @else
                                                 {{$server->disk}}<small>GB</small>
                                             @endif
@@ -230,6 +230,20 @@
                             this.modal_id = event.target.id;
                             this.delete_form_action = 'servers/' + this.modal_id;
                         }
+                    }
+                });
+            })
+            window.addEventListener('load', function () {
+                $('#servers-table').DataTable({
+                    "pageLength": 15,
+                    "lengthMenu": [5, 10, 15, 25, 30, 50, 75, 100],
+                    "columnDefs": [
+                        {"orderable": false, "targets": 1}
+                    ],
+                    "initComplete": function () {
+                        $('.dataTables_length,.dataTables_filter').addClass('mb-2');
+                        $('.dataTables_paginate').addClass('mt-2');
+                        $('.dataTables_info').addClass('mt-2 text-muted ');
                     }
                 });
             })

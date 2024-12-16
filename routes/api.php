@@ -78,7 +78,7 @@ Route::middleware('throttle:4')->post('yabs/{server}/{key}', 'App\Http\Controlle
 Route::middleware('auth:api')->get('yabs/', 'App\Http\Controllers\ApiController@getAllYabs');
 Route::middleware('auth:api')->get('yabs/{id}', 'App\Http\Controllers\ApiController@getYabs');
 
-
+Route::middleware('auth:api')->get('note/{id}', 'App\Http\Controllers\ApiController@getNote');
 Route::middleware('auth:api')->get('notes', 'App\Http\Controllers\ApiController@getAllNotes');
 Route::middleware('auth:api')->get('notes/{id}', 'App\Http\Controllers\ApiController@getNote');
 Route::middleware('auth:api')->post('notes', 'App\Http\Controllers\ApiController@storeNote');

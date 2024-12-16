@@ -106,6 +106,26 @@
                             <td class="td-nowrap">{{$yabs2_data->gb5_multi}}</td>
                         </tr>
                         <tr>
+                            <td class="td-nowrap">GB6 single</td>
+                            <td class="td-nowrap">{{$yabs1_data->gb6_single}}</td>
+                            @if(!is_null($yabs1_data->gb6_single) && !is_null($yabs2_data->gb6_single))
+                                {!! \App\Models\Server::tableRowCompare($yabs1_data->gb6_single, $yabs2_data->gb6_single, '') !!}
+                            @else
+                                <td>-</td>
+                            @endif
+                            <td class="td-nowrap">{{$yabs2_data->gb6_single}}</td>
+                        </tr>
+                        <tr>
+                            <td class="td-nowrap">GB6 multi</td>
+                            <td class="td-nowrap">{{$yabs1_data->gb6_multi}}</td>
+                            @if(!is_null($yabs1_data->gb6_multi) && !is_null($yabs2_data->gb6_multi))
+                                {!! \App\Models\Server::tableRowCompare($yabs1_data->gb6_multi, $yabs2_data->gb6_multi, '') !!}
+                            @else
+                                <td>-</td>
+                            @endif
+                            <td class="td-nowrap">{{$yabs2_data->gb6_multi}}</td>
+                        </tr>
+                        <tr>
                             <td class="td-nowrap">4k disk</td>
                             <td class="td-nowrap">{{$yabs1_data->disk_speed->d_4k_as_mbps}}<span class="data-type">MB/s</span>
                             </td>

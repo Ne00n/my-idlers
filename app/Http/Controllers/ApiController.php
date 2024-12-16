@@ -510,8 +510,8 @@ class ApiController extends Controller
 
     protected function getNote($id)
     {
-        $note = Note::note($id)->toJson(JSON_PRETTY_PRINT);
-        return response($note, 200);
+        $note = Note::where('id', $id)->firstOrFail('note')->pluck('note');
+        return response($note, 200)->header('Content-Type', 'text/plain');
     }
 
     protected function storeNote(Request $request)
